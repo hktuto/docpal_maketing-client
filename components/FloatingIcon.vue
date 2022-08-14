@@ -32,6 +32,7 @@
 
 
 <script setup lang="ts">
+import { ElDialog } from 'element-plus'
 const opened = ref(false)
     const contactOpened = ref(false)
     const goContact = () => {
@@ -62,6 +63,9 @@ const opened = ref(false)
   background-position: center bottom;
   background-size: cover;
   background-repeat: no-repeat;
+  @media (prefers-color-scheme: dark) {
+     background-image: url('/home_bottom_bg_dark.jpg');
+  }
 }
 </style>
 

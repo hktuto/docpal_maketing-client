@@ -42,11 +42,12 @@ html.dark {
 
 html{
   background-color: var(--page-bg);
+  color: var(--text-color);
 }
 
 *{
   box-sizing: border-box;
-  color: var(--text-color);
+  
 }
 
 // normalize css

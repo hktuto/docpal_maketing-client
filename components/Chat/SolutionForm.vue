@@ -44,7 +44,7 @@
         </el-button>
       </div>
       <div class="c">
-        <el-button class="actionButton" type="link" @click="$emit('goContact')">
+        <el-button class="actionButton" type="info" @click="$emit('goContact')">
           Wanna know more? Contact our Solution Manager
         </el-button>
       </div>
@@ -53,6 +53,7 @@
 </template>
 
 <script setup lang="ts">
+import { ElInput, ElButton } from 'element-plus';
      const search = ref('')
     const searchAllTag = computed(() => {
       if (search.value) {

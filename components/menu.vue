@@ -14,6 +14,7 @@
 
 <script lang="ts" setup >
     import { ChildItem, MenuItem } from '~~/models/menu';
+    import { ElMenu, ElMenuItem, ElSubMenu } from 'element-plus'
     const { find } = useStrapi3()   
     // const {menu} = useMenu();
     const route = useRoute();

@@ -1,9 +1,7 @@
 import { defineNuxtConfig } from 'nuxt'
 
 
-import AutoImport from 'unplugin-auto-import/vite'
-import Components from 'unplugin-vue-components/vite'
-import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+const lifecycle = process.env.npm_lifecycle_event;
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
@@ -23,14 +21,7 @@ export default defineNuxtConfig({
         classPrefix:'',
         classSuffix:'',
     },
-    vite:{
-        plugins: [
-            AutoImport({
-                resolvers: [ElementPlusResolver({importStyle:false})],
-            }),
-            Components({
-                resolvers: [ElementPlusResolver({importStyle:false})],
-            }),
-        ]
-    }
+    build: {
+        transpile: lifecycle === "build" ? ["element-plus"] : [],
+      },
 })

@@ -13,7 +13,7 @@
         </el-button>
       </div>
       <div class="c">
-        <el-button class="actionButton" type="link" @click="$emit('goSolution')">
+        <el-button class="actionButton" type="default" @click="$emit('goSolution')">
           Back
         </el-button>
       </div>
@@ -22,6 +22,7 @@
 </template>
 
 <script setup lang="ts">
+import { ElForm, ElButton } from 'element-plus'
 const contactForm = ref()
     const submit = () => {
       contactForm.value.submit()

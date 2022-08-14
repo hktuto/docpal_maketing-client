@@ -25,6 +25,7 @@
 </template>
 
 <script setup lang="ts">
+import { ElFormItem ,ElInput,  } from 'element-plus';
 const { interest } = useInterest()
     // // @ts-ignore
     // const { $axios, $gtag } = useContext()
