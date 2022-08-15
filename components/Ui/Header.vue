@@ -32,6 +32,7 @@ const bgUrl = computed( () =>  colorMode.value === 'light' ? props.data.bg.url :
 
 
 <style lang="scss" scoped>
+$gridBreakpoint: 1700px + 48px;
 .videoWall{
     --main-grid: 1700px;
     overflow: hidden;
@@ -50,6 +51,9 @@ const bgUrl = computed( () =>  colorMode.value === 'light' ? props.data.bg.url :
         background-repeat: no-repeat;
         background-position: cover;
         z-index: -1;
+    }
+    @media(max-width: $gridBreakpoint ){
+      padding: 0 var(--grid-margin);
     }
 }
 .video{
