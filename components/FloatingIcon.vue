@@ -3,7 +3,7 @@
     <div :class="{ tipContainer: true, opened: opened || contactOpened }">
       <div class="tipContent">Tell us what can i help?</div>
     </div>
-    <Logo />
+    <LogoSmall />
     <el-dialog
       v-model="opened"
       custom-class="chatDialog"
@@ -32,7 +32,7 @@
 
 
 <script setup lang="ts">
-import { ElDialog } from 'element-plus'
+import { ElDialog, ElTag } from 'element-plus'
 const opened = ref(false)
     const contactOpened = ref(false)
     const goContact = () => {

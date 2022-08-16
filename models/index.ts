@@ -20,7 +20,7 @@ export type PageComponent = {
     thumbnail?: PageMedia
     video?: PageMedia
     bgColor?: string
-    featureType?: 'grid' | 'slide'
+    featureType?: 'grid' | 'slide' | 'fullSide'
     height?: number,
     size?: 'mini' | 'small' | 'normal' | 'big' | 'mega'
 }

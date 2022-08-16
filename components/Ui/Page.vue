@@ -5,7 +5,7 @@
             <UiFeatureRow v-else-if="item.__component === 'feature-card.feature-row'" :data="item" />
             <UiSlideshow v-else-if="item.__component === 'slide.slidershow'" :slides="item.slide" />
             <UiHeader v-else-if="item.__component === 'basic.header'" :data="item" />
-            <div v-else-if="item.__component ==='basic.spacing'" class="rowSpacing" :style="`--spacing: ${item.height}px`" />
+            <div v-else-if="item.__component ==='basic.spacing'" class="rowSpacing innerGrid" :style="`--spacing: ${item.height}px`" />
         </template>
     </div>
 </template>
@@ -20,7 +20,17 @@ const props = defineProps<{page: PageComponent[]}>()
 .rowSpacing {
     display: block;
     height: var(--spacing);
-    width: 100%;
-     background: var(--page-bg);
+    // width: 100%;
+    background: var(--page-bg);
+    position: relative;
+    &:after {
+        content: '';
+        width:100%;
+        height: 1px;
+        position: absolute;
+        left:0;
+        top: 50%;
+        background: rgba(255,255,255,0.2);
+    }
 }
 </style>

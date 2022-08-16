@@ -1,5 +1,5 @@
 <template>
-    <el-menu :default-active="activeRoute" mode="horizontal" @select="menuChange">
+    <el-menu :default-active="activeRoute" mode="horizontal" @select="menuChange" :ellipsis="breakpoints.isSmaller('sm')">
         <template v-for="(item,index) in menu" :key="index">
             <el-menu-item v-if="!item.child || item.child.length === 0" :index="item.slug">{{ item.label }}</el-menu-item>
             <el-sub-menu v-else :index="item.slug">
@@ -15,6 +15,8 @@
 <script lang="ts" setup >
     import { ChildItem, MenuItem } from '~~/models/menu';
     import { ElMenu, ElMenuItem, ElSubMenu } from 'element-plus'
+    import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
+    const breakpoints = useBreakpoints(breakpointsTailwind)
     const { find } = useStrapi3()   
     // const {menu} = useMenu();
     const route = useRoute();

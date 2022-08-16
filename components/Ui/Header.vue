@@ -7,10 +7,10 @@
             <div class="gridSection">
                 <h3 class="gridSection--subtitle">{{data.title}}</h3>
                 <h1 class="gridSection--title">{{ data.subtitle }}</h1>
-                <!-- <div class="action">
-                    <ElButton type="primary">{{data.showMeAroundText}}</ElButton>
-                    <ElButton type="primary">{{data.bookADemoText}}</ElButton>
-                </div> -->
+                <div class="action">
+                    <ElButton type="primary">{{data.buttonA}}</ElButton>
+                    <ElButton type="primary">{{data.buttonB}}</ElButton>
+                </div>
             </div>
             <div class="gridSection">
                 <img class="gridSection--video" :src="config.STRAPI_URL + data.thumbnail.url" />
@@ -21,6 +21,7 @@
 
 <script lang="ts" setup>
 import { PageComponent } from '~~/models';
+import { ElButton } from 'element-plus'
 const config = useRuntimeConfig()
 const colorMode = useColorMode()
 const props = defineProps<{
@@ -111,15 +112,7 @@ $gridBreakpoint: 1700px + 48px;
 }
 
 
-@keyframes swing {
-    from {
-        transform: rotate3d(1, 1, 0, -12deg);
-    }
 
-    to {
-          transform: rotate3d(1, 1, 0, 12deg);  
-    }
-}
 
 
 </style>

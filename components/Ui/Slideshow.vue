@@ -9,21 +9,19 @@
             :centered-slides="true"
             :mousewheel="true"
             :slides-per-view="1"
-            :autoplay="{
-                delay: 5000,
-                disableOnInteraction: false
-            }"
+            :autoplay="false"
             class="swiper">
-            <SwiperSlide v-for="slide in slides" :key="slide.id" class="slide">
-                <h1 class="slide__title innerGrid">
-                    <inlineSvg :src="config.STRAPI_URL + slide.icon.url" />
-                    {{slide.title}}
-                </h1>
+            <SwiperSlide v-for="slide in data.card" :key="slide.id" class="slide">
+                
                 <div class="slide__content">
                     <div class="slide__content__image">
-                        <img :src="config.STRAPI_URL + slide.image.url" />
+                        <img :src="config.STRAPI_URL + slide.featureImg.url" />
                     </div>
                     <div class="slide__description">
+                        <h1 class="slide__title ">
+                            <inlineSvg v-if="slide.icon" :src="config.STRAPI_URL + slide.icon.url" />
+                            {{slide.title || ''}}
+                        </h1>
                         {{ slide.content }}
                         <div class="slide__readMore">
                             Read more
@@ -37,19 +35,19 @@
 
 <script lang="ts" setup>
     import inlineSvg from 'vue-inline-svg'
-    import { PageSlide } from '~~/models/slide';
     import { Swiper, SwiperSlide } from 'swiper/vue';
     import { Pagination, Navigation, Autoplay } from 'swiper'
     import 'swiper/css'
     import 'swiper/css/pagination'
     import 'swiper/css/navigation'
+    import { PageComponent } from '~~/models';
 
 
     const modules = [Pagination, Autoplay]
     const config = useRuntimeConfig()
 
     defineProps<{
-        slides: PageSlide[]
+        data: PageComponent
     }>();
 </script>
 
@@ -58,7 +56,6 @@
     --background: #EBF4F6;
     padding: 32px 0;
     margin-top: 24px;
-    height: 100vh;
     overflow-y: hidden;
      width:100%;
     background: var(--background);
@@ -69,13 +66,19 @@
 .slide{
     &__content{
         display: grid;
-        grid-template-columns: 70% 30%;
-        gap: 12px;
+        grid-template-columns: 50% 50%;
+        gap: 24px;
         padding: 0 32px;
         &__image{
             position: relative;
+            animation-name: swing;
+            animation-duration: 8s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            border-radius: 24px;
+            overflow: hidden;
             img{
-                float: right;
+                width: 100%;
             }
         }
         @media( max-width: 1024px){
@@ -88,7 +91,7 @@
     
     &__description{
         display: grid;
-        place-content: center;
+        grid-template-rows: min-content 1fr min-content;
     }
     &__readMore{
         margin: 12px 0;
@@ -110,6 +113,8 @@
 }
 h1{
     margin: 0 auto;
+    width:100%;
+    margin-bottom: 24px;
     svg{
         width: 36px;
         height: 36px;

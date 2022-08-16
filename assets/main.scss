@@ -107,3 +107,14 @@ th {
   background-color: var(--primary-color);
   color: white;
 }
+
+
+@keyframes swing {
+  from {
+      transform: rotate3d(1, 1, 0, -12deg);
+  }
+
+  to {
+        transform: rotate3d(1, 1, 0, 12deg);  
+  }
+}

@@ -5,6 +5,7 @@
             <UiFeatureGrid v-if="data.featureType === 'grid'" :data="data" />
             <ClientOnly>
                 <UiFeatureSlide v-if="data.featureType === 'slide'" :data="data" />
+                <UiSlideshow v-if="data.featureType === 'fullSide'" :data="data" />
             </ClientOnly>
         </div>
     </div>
@@ -23,6 +24,7 @@
 .container{
     padding: 24px 0;
      background: var(--page-bg);
+     perspective: 1000px;
     &.mini {
         padding: 8px 0;
     }

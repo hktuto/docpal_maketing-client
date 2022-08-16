@@ -53,7 +53,7 @@
 </template>
 
 <script setup lang="ts">
-import { ElInput, ElButton } from 'element-plus';
+import { ElInput, ElButton, ElTag } from 'element-plus';
      const search = ref('')
     const searchAllTag = computed(() => {
       if (search.value) {

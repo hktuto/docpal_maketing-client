@@ -5,7 +5,7 @@
             <Client-only>
                 <Menu />
             </Client-only>
-            <!-- <ContactSalesBtn /> -->
+            <ContactSalesBtn />
         </div>
     </div>
 </template>
@@ -42,7 +42,7 @@
 }
 .innerGrid{
     display: grid;
-    grid-template-columns: min-content 1fr;
+    grid-template-columns: min-content 1fr min-content;
     justify-content: flex-start;
     align-items: center;
 }

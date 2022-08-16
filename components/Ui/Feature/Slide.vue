@@ -126,7 +126,8 @@ const breakpoints = computed( () => {
     }
 })
 const autoplay = {
-    delay: 5000
+    delay: 2000,
+    pauseOnMouseEnter: true
 }
 
 
@@ -144,7 +145,8 @@ const autoplay = {
     overflow: visible;
 
     .slide{
-        width: 320px
+        width: 320px;
+        perspective: 1000px;
     }
 }
 </style>
