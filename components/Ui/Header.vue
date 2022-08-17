@@ -41,6 +41,7 @@ $gridBreakpoint: 1700px + 48px;
     scroll-snap-align: start end;
     width: 100%;
     position: relative;
+    z-index: 2;
     &::after {
         content: '';
         position: absolute;

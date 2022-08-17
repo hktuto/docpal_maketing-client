@@ -26,15 +26,17 @@
 
 <style lang="scss" scoped>
 .column{
-    padding: 12px;
+    padding: 24px;
     background-color: var(--column-bg);
     border-radius: 12px;
     transition: background .2s ease-in-out;
+    z-index: 2;
+    backdrop-filter: blur(20px);
     @media (max-width: 1024px){
         grid-column: initial;
     }
     &__title{
-        color: var(--primary-color);
+        color: var(--primary-color-50);
         font-size: clamp(1rem, -0.875rem + 8.333vw, 1.2rem);
         margin-bottom: 12px;
     }

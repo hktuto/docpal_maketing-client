@@ -9,6 +9,7 @@
 @use 'element-plus/theme-chalk/src/dark/css-vars.scss' as *;
 
 @use "element-plus/theme-chalk/src/index.scss" as *;
+@import url('https://fonts.googleapis.com/css?family=Exo:400,700');
 
 $gridSize: 1280px;
 $gridMargin: 24px;
@@ -24,13 +25,14 @@ $smallGrid: 960px;
     --text-color: #292D34;
     --page-bg: rgb(239, 243, 244);
     --card-bg: #fff;
-    --column-bg: rgb(229, 236, 240);
+    --column-bg: rgba(229, 236, 240, 0.4);
     --header-height: 74px;
     --app-padding: 8px;
     --grid-margin: 24px;
     --card-bg-img: linear-gradient(90deg, #ffffff 0%, #ffffff 25%, #00DC82 50%, #36E4DA 75%, #0047E1 100%);
     --el-fill-color-blank: var(--page-bg);
     --feature-title-color: -webkit-linear-gradient(90deg, rgb(49, 61, 68),rgb(80, 99, 111));
+    --line-color: rgba(0,0,0,0.2);
 }
 
 html.dark {
@@ -40,6 +42,7 @@ html.dark {
   --card-bg-img: linear-gradient(90deg, #303030 0%, #303030 25%, #00DC82 50%, #36E4DA 75%, #0047E1 100%);
   --feature-title-color: -webkit-linear-gradient(90deg, rgb(117, 131, 139),rgb(116, 151, 174));
   --column-bg: rgb(37, 41, 43);
+  --line-color: rgba(255,255,255,0.2);
 }
 
 html{

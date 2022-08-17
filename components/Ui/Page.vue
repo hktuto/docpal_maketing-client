@@ -30,7 +30,7 @@ const props = defineProps<{page: PageComponent[]}>()
         position: absolute;
         left:0;
         top: 50%;
-        background: rgba(255,255,255,0.2);
+        background: var(--line-color);
     }
 }
 </style>

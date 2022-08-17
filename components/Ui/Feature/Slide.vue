@@ -139,6 +139,8 @@ const autoplay = {
     padding-block: 24px;
     background-color: rgba(20, 38, 54, 0.08);
     width: 100vw;
+    z-index: 2;
+    backdrop-filter: blur(20px);
 }
 .swiper{
     width:100%;
