@@ -1,7 +1,7 @@
 <template>
     <div class="column" :style="`--col-span:${span}`">
         <h3 v-if="title" class="column__title">{{ title }}</h3>
-        <div v-html="mdContent" />
+        <div class="htmlContent" v-html="mdContent" />
     </div>
 </template>
 
@@ -26,7 +26,10 @@
 
 <style lang="scss" scoped>
 .column{
-    padding: 12px 0;
+    padding: 12px;
+    background-color: var(--column-bg);
+    border-radius: 12px;
+    transition: background .2s ease-in-out;
     @media (max-width: 1024px){
         grid-column: initial;
     }
@@ -39,6 +42,12 @@
         font-size: 0.8rem;
         line-height: 1.5rem;
     }
+    &:hover, &:focus-visible {
+        background-color: var(--primary-color);
+        --text-color: #fff; 
+    }
 }
-
+.htmlContent{
+    color: var(--text-color)
+}
 </style>

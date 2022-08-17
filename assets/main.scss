@@ -24,6 +24,7 @@ $smallGrid: 960px;
     --text-color: #292D34;
     --page-bg: rgb(239, 243, 244);
     --card-bg: #fff;
+    --column-bg: rgb(229, 236, 240);
     --header-height: 74px;
     --app-padding: 8px;
     --grid-margin: 24px;
@@ -38,6 +39,7 @@ html.dark {
   --card-bg: rgb(22, 22, 22);
   --card-bg-img: linear-gradient(90deg, #303030 0%, #303030 25%, #00DC82 50%, #36E4DA 75%, #0047E1 100%);
   --feature-title-color: -webkit-linear-gradient(90deg, rgb(117, 131, 139),rgb(116, 151, 174));
+  --column-bg: rgb(37, 41, 43);
 }
 
 html{
