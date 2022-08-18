@@ -31,9 +31,9 @@
 <style lang="scss" scoped>
 .footerContainer{
     padding: 24px 0;
-    border-top: 1px solid #eee; 
+    border-top: 1px solid var(--page-bg); 
     scroll-snap-align: start end;
-    background: rgba(252, 252, 250, 0.2);
+    background: var(--footer-bg);
     position: relative;
     z-index: 2;
     backdrop-filter: blur(20px);
