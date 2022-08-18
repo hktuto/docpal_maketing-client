@@ -32,6 +32,7 @@
     transition: background .2s ease-in-out;
     z-index: 2;
     backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.1);
     @media (max-width: 1024px){
         grid-column: initial;
     }
@@ -44,10 +45,7 @@
         font-size: 0.8rem;
         line-height: 1.5rem;
     }
-    &:hover, &:focus-visible {
-        background-color: var(--primary-color);
-        --text-color: #fff; 
-    }
+    
 }
 .htmlContent{
     color: var(--text-color)

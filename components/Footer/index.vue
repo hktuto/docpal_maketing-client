@@ -15,7 +15,7 @@
         <div class="underFooter innerGrid">
             <Logo class="underFooter__logo" />
             <div class="underFooter__right">
-                <span>Copyright @ Doc-pal</span>
+                <span>Copyright @ Docpal</span>
                 <nuxt-link>Privacy Policy</nuxt-link>
                 <nuxt-link>Cookie Policy</nuxt-link>
             </div>
@@ -65,7 +65,7 @@ ul {
     align-items: center;
     font-size: 0.8rem;
     &__logo{
-        height: 20px;
+        height: 30px;
     }
     &__right{
         display: grid;
