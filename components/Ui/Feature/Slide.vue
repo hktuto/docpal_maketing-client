@@ -4,6 +4,8 @@
             <Swiper
                 :modules="modules"
                 :loop="true"
+                :pagination="{ clickable: true,  dynamicBullets: true }"
+                :navigation="false"
                 :space-between="24"
                 :centered-slides="false"
                 :breakpoints="breakpoints"
@@ -137,7 +139,7 @@ const autoplay = {
 .swiperContainer{
     overflow: visible;
     padding-block: 24px;
-    background-color: rgba(20, 38, 54, 0.08);
+    background-color: rgba(20, 38, 54, 0.04);
     width: 100vw;
     z-index: 2;
     backdrop-filter: blur(20px);

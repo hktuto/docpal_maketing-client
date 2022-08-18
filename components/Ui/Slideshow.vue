@@ -1,5 +1,5 @@
 <template>
-    <section class="container" >
+    <section class="sliderContainer" >
         <Swiper 
             :modules="modules"
             :loop="true"
@@ -52,13 +52,16 @@
 </script>
 
 <style lang="scss" scoped>
-.container{
+.sliderContainer{
     --background: #EBF4F6;
-    padding: 32px 0;
+    padding: 32px 24px;
     margin-top: 24px;
     overflow-y: hidden;
-     width:100%;
-    background: var(--background);
+    width:100%;
+    background: var(--footer-bg);
+    backdrop-filter: blur(20px);
+    position: relative;
+    z-index: 2;
     @media (max-width: 800px) {
         height: 70vh;
     }

@@ -33,7 +33,10 @@
     padding: 24px 0;
     border-top: 1px solid #eee; 
     scroll-snap-align: start end;
-     background: var(--page-bg);
+    background: rgba(252, 252, 250, 0.2);
+    position: relative;
+    z-index: 2;
+    backdrop-filter: blur(20px);
 }
 ul {
     list-style: none;

@@ -24,7 +24,7 @@
 .container{
     padding: 24px 0;
      background: var(--page-bg);
-     perspective: 1000px;
+    //  perspective: 1000px;
     &.mini {
         padding: 8px 0;
     }
@@ -91,6 +91,7 @@
         grid-template-columns: repeat(var(--grid-size), 1fr);
         column-gap: var(--gap-size);
         row-gap: var(--gap-size); 
+        z-index: 2;
         @media (max-width: 1024px) {
             grid-template-columns: 1fr 1fr;
         }

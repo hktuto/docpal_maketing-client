@@ -4,18 +4,19 @@
         <slot />
         <Footer />
         <floating-icon />
-        <ul class="anibg">
-            <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-        </ul>
+        <div class="anibg">
+            <LogoColor />
+            <LogoColor />
+            <LogoColor />
+            <LogoColor />
+            <LogoColor />
+            <LogoColor />
+            <LogoColor />
+            <LogoColor />
+            <LogoColor />
+            <LogoColor />
+            <LogoColor />
+        </div>
     </div>
 </template>
 
@@ -41,14 +42,14 @@ colorMode.preference = 'system';
     overflow: hidden;
     padding: 0;
     margin: 0;
-    li{
+    .logo{
         position: absolute;
         display: block;
         list-style: none;
         width: 20px;
         height: 20px;
         border-radius: 20%;
-        background: linear-gradient(90deg, rgb(78, 212, 219), rgb(50, 131, 218));
+        // background: linear-gradient(90deg, rgb(78, 212, 219), rgb(50, 131, 218));
         animation: animate 25s linear infinite;
         bottom: -150px;
         &:nth-child(1){
@@ -122,12 +123,12 @@ colorMode.preference = 'system';
 @keyframes animate {
 
     0%{
-        transform: translateY(0) rotate(0deg);
+        transform: translateY(0) translateX(0)  rotate(0deg);
         opacity: 1;
     }
 
     100%{
-        transform: translateY(-1000px) rotate(720deg);
+        transform: translateY(-1000px) translateX(1000px) rotate(720deg);
         opacity: 0;
     }
 

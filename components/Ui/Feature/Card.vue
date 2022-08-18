@@ -52,10 +52,9 @@ const feature = computed(() => colorMode.value === 'light' ? props.card.featureI
     border-radius: var(--card-radius);
     box-shadow: 0px 5px 20px -10px rgba(11, 22, 26, 0.25);
     
-    background: #fff;
     transition: all .3s ease-in-out;
     height: var(--card-height);
-    background-color: var(--card-bg);
+    background: var(--card-bg);
     color: var(--text-color);
     outline-color: transparent;
     position: relative;
