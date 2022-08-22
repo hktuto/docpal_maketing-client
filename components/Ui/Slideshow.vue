@@ -4,18 +4,18 @@
             :modules="modules"
             :loop="true"
             :pagination="{ clickable: true,  dynamicBullets: true }"
-            :navigation="false"
             :space-between="500"
             :centered-slides="true"
-            :mousewheel="true"
             :slides-per-view="1"
-            :autoplay="false"
+            :autoplay="{
+                delay: 5000
+            }"
             class="swiper">
             <SwiperSlide v-for="slide in data.card" :key="slide.id" class="slide">
                 
                 <div class="slide__content">
                     <div class="slide__content__image">
-                        <img :src="config.STRAPI_URL + slide.featureImg.url" />
+                         <img :src="config.STRAPI_URL + slide.featureImg.url" data-sampler="uTexture"/>
                     </div>
                     <div class="slide__description">
                         <h1 class="slide__title ">
@@ -41,7 +41,6 @@
     import 'swiper/css/pagination'
     import 'swiper/css/navigation'
     import { PageComponent } from '~~/models';
-
 
     const modules = [Pagination, Autoplay]
     const config = useRuntimeConfig()
@@ -74,10 +73,6 @@
         padding: 0 32px;
         &__image{
             position: relative;
-            animation-name: swing;
-            animation-duration: 8s;
-            animation-iteration-count: infinite;
-            animation-direction: alternate;
             border-radius: 24px;
             overflow: hidden;
             img{

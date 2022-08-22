@@ -51,6 +51,8 @@ html.dark {
 html{
   background-color: var(--page-bg);
   color: var(--text-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 *{
@@ -63,7 +65,7 @@ html,body{
     padding:0;
     margin:0;
     font-family: 'Noto Sans', 'Noto Sans SC', 'Noto Sans TC', 'Roboto', Arial, Helvetica, sans-serif;
-    overflow-x: hidden;
+    // overflow-x: hidden;
     height: 100vh;
     scroll-behavior: smooth;
 }
@@ -80,6 +82,10 @@ p{
 a{
   text-decoration: none;
   color: initial;
+}
+
+.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction{
+  bottom: -27px !important;
 }
 
 .innerGrid{

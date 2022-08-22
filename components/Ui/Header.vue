@@ -1,15 +1,15 @@
 <template>
     <div class="videoWall">
         <div class="video">
-            <video  :src="config.STRAPI_URL + bgUrl" autoplay muted loop/>
+            <video  :src="config.STRAPI_URL + bgUrl" autoplay muted loop data-sampler="uTexture"/>
         </div>
         <div class="innerGrid">
             <div class="gridSection">
                 <h3 class="gridSection--subtitle">{{data.title}}</h3>
                 <h1 class="gridSection--title">{{ data.subtitle }}</h1>
                 <div class="action">
-                    <ElButton type="primary">{{data.buttonA}}</ElButton>
-                    <ElButton type="primary">{{data.buttonB}}</ElButton>
+                    <ElButton type="primary" @click="goContact">{{data.buttonA}}</ElButton>
+                    <ElButton type="primary" @click="goContact">{{data.buttonB}}</ElButton>
                 </div>
             </div>
             <div class="gridSection">
@@ -22,6 +22,7 @@
 <script lang="ts" setup>
 import { PageComponent } from '~~/models';
 import { ElButton } from 'element-plus'
+import CurtainsView from './CurtainsView.vue';
 const config = useRuntimeConfig()
 const colorMode = useColorMode()
 const props = defineProps<{
@@ -29,6 +30,10 @@ const props = defineProps<{
 }>()
 
 const bgUrl = computed( () =>  colorMode.value === 'light' ? props.data.bg.url : props.data.darkBg.url );
+function goContact() {
+    const ev = new CustomEvent('open-contact');
+    window.dispatchEvent(ev);
+}
 </script>
 
 

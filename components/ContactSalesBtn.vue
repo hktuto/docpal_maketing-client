@@ -1,9 +1,14 @@
 <template>
-   <ElButton type="primary">Contact Sales</ElButton>
+   <ElButton type="primary" @click="btnClick">Contact Sales</ElButton>
 </template>
 
 <script lang="ts" setup>
 import { ElButton } from 'element-plus'
+
+function btnClick() {
+    const ev = new CustomEvent('open-contact');
+    window.dispatchEvent(ev);
+}
 </script>
 
 <style lang="scss" scoped>

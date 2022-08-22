@@ -29,11 +29,11 @@ colorMode.preference = 'system';
 
 <style lang="scss" scoped>
 .pageContainer{
-    background: var(--page-bg);
-    isolation: isolate;
+    // background: var(--page-bg);
+    // isolation: isolate;
 }
 .anibg{
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;

@@ -48,8 +48,14 @@ const opened = ref(false)
       opened.value = true;
     }
 
-    onMounted(() => window.addEventListener('open-qa', evHandler))
-    onUnmounted(() => window.removeEventListener('open-qa', evHandler))
+    onMounted(() => {
+      window.addEventListener('open-qa', evHandler)
+      window.addEventListener('open-contact', goContact)
+      })
+    onUnmounted(() => {
+      window.removeEventListener('open-qa', evHandler)
+      window.removeEventListener('open-contact', goContact)
+      })
 </script>
 
 <style lang="scss" >
